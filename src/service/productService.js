@@ -7,7 +7,7 @@ const getProducts = async () => {
 const insertProduct = async (productName) => {
     let sql = "INSERT INTO products (name) VALUES ($1) RETURNING id";
     let values = [productName];
-    let result = await query(sql, values);
+    let result = await connection(sql, values);
 };
 
 module.exports = {
